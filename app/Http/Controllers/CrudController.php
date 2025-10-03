@@ -9,12 +9,12 @@ class CrudController extends Controller
 {
     public function showAll()
     {
-        return "Hola desde index";
+        return view('crud-app.index');
     }
 
     public function createUser()
     {
-        return "Vista para crear usuario";
+        return view('crud-app.create');
     }
 
     public function saveUser(Request $request)
