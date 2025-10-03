@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Http\Request;
 
@@ -9,6 +10,7 @@ class CrudController extends Controller
 {
     public function showAll()
     {
+        
         return view('crud-app.index');
     }
 
