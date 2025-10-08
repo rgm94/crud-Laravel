@@ -30,7 +30,19 @@
                 Ver todos los usuarios
             </a>
         </header>
-        <main id="content" class="w-full lg:w-1/4 p-2">
+        <main id="content" class="w-full flex flex-col gap-2 lg:w-1/4 p-2">
+            @if ($errors->has('error'))
+                <div class="w-full border-2 rounded-lg p-4 text-center" role="alert">
+                    <p>{{ $errors->first('error') }}</p>
+                </div>
+            @endif
+
+            @if (session('success'))
+                <div class="w-full border-2 rounded-lg p-4 text-center" role="alert">
+                    <p>{{ session('success') }}</p>
+                </div>
+            @endif
+
             <form class="w-full p-2 flex flex-col items-center justify-center gap-3 border-2 rounded-lg" 
             action="{{route('save')}}"
             method="POST"
@@ -44,17 +56,32 @@
                     placeholder="Introduce Nombre" 
                     required
                     >
+                    @error('name')
+                    <span class="text-red text-md">
+                        {{ $message }} 
+                    </span>
+                    @enderror
                 </div>
                 <div class="w-full border-2 rounded-md p-2">
                     <input class="w-full outline-none cursor-pointer" type="email" name="email" 
                     placeholder="Introduce Email" 
                     required
                     >
+                    @error('email')
+                        <span class="text-red text-md">
+                            {{ $message }} 
+                        </span>
+                    @enderror
                 </div>
                 <div class="w-full border-2 rounded-md p-2">
                     <input class="w-full outline-none cursor-pointer" type="password" name="password" placeholder="Introduce Contraseña" 
                     required
                     >
+                    @error('password')
+                        <span class="text-red text-md">
+                            {{ $message }} 
+                        </span>
+                    @enderror
                 </div>
                 <div class="w-full flex justify-center rounded-md p-2">
                     <input class="w-full bg-black text-white p-2 rounded-md cursor-pointer" type="submit" 

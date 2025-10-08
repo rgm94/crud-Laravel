@@ -5,13 +5,15 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Redirect;
 
 class CrudController extends Controller
 {
     public function showAll()
     {
-        
-        return view('crud-app.index');
+        $users = User::all();
+        return view('crud-app.index',compact('users'));
     }
 
     public function createUser()
@@ -21,11 +23,37 @@ class CrudController extends Controller
 
     public function saveUser(Request $request)
     {
-        return "guardar usuario";
+        $request->validate(
+            [
+                'name' => 'required|string|min:3',
+                'email' => 'required|unique:users|string',
+                'password' => 'required|min:8'
+            ],
+
+            [
+                'name.required' => 'El nombre tiene que tener al menos 3 caracteres',
+                'name.required' => 'El campo nombre debe estar relleno.',
+                'email.required' => 'El campo email debe estar relleno.',
+                'email.unique' => 'Este email ya está registrado.',
+                'password.min' => 'La contraseña debe tener al menos 8 caracteres',
+            ]
+        );
+        
+        $user = new User();
+        $user->name = Str::headline($request->name);
+        $user->email = $request->email;
+        $user->password = $request->password;
+        $user->save();
+        
+        if(!$user)
+        {
+            return Redirect::route('create')->withErrors(['error' => 'Error, usuario no registrado.']);
+        }
+        return Redirect::route('create')->with(['success' => 'Usuario registrado con éxito']);
     }
 
-    public function editUser(Request $request, $id)
-    {
+    public function editUser($id)
+    {   
         return "editar usuario";
     }
 
