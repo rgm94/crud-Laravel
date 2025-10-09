@@ -60,11 +60,36 @@ class CrudController extends Controller
 
     public function updateUser(Request $request, $id)
     {
-        return "actualizar usuario";
+        $request->validate(
+            [
+                'name' => 'required|string|min:3',
+                'email' => 'required|unique:users|string',
+                'password' => 'required|min:8'
+            ],
+
+            [
+                'name.required' => 'El nombre tiene que tener al menos 3 caracteres',
+                'name.required' => 'El campo nombre debe estar relleno.',
+                'email.required' => 'El campo email debe estar relleno.',
+                'email.unique' => 'Este email ya está registrado.',
+                'password.min' => 'La contraseña debe tener al menos 8 caracteres',
+            ]
+        );
+    
+        $user = User::findOrFail($id);
+        $user->name = Str::headline($request->name);
+        $user->email = $request->email;
+        $user->password = $request->password;
+        $user->save();
+
+        return Redirect::route('edit',encrypt($id))->with(['success' => 'Usuario actualizado!!']);
     }
 
     public function deleteUser(Request $request, $id)
     {
-        return "eliminar usuario";
+        $user = User::findOrFail(decrypt($id));
+        $user->delete();
+
+        return Redirect::route('index')->with(['success' => 'Usuario Eliminado']);
     }
 }
