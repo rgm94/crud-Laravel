@@ -53,10 +53,11 @@
             @endif
 
             <form class="w-full p-4 flex flex-col items-center justify-center gap-5 rounded-xl bg-white shadow-2xl" 
-                action="{{route('update',$user->id)}}"
+                action="{{ route('update',$user->id) }}"
                 method="POST"
             >
                 @csrf
+                @method('PUT')
                 <div class="w-full flex justify-center items-center p-2 rounded-lg">
                     <svg class="w-8 h-10 text-[#322e81] dark:text-white" aria-hidden="true" 
                     xmlns="http://www.w3.org/2000/svg" 
