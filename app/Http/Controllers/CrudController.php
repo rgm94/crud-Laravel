@@ -87,6 +87,9 @@ class CrudController extends Controller
 
     public function deleteUser(Request $request, $id)
     {
-        return "eliminar usuario";
+        $user = User::findOrFail(decrypt($id));
+        $user->delete();
+
+        return Redirect::route('index')->with(['success' => 'Usuario Eliminado']);
     }
 }
