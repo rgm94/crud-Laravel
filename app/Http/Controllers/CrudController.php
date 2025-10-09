@@ -85,7 +85,7 @@ class CrudController extends Controller
         return Redirect::route('edit',encrypt($id))->with(['success' => 'Usuario actualizado!!']);
     }
 
-    public function deleteUser(Request $request, $id)
+    public function deleteUser($id)
     {
         $user = User::findOrFail(decrypt($id));
         $user->delete();
