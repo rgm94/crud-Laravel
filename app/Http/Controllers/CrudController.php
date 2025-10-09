@@ -54,7 +54,8 @@ class CrudController extends Controller
 
     public function editUser($id)
     {   
-        return "editar usuario";
+        $user = User::findOrFail(decrypt($id));
+        return view('crud-app.editar',compact('user'));
     }
 
     public function updateUser(Request $request, $id)
