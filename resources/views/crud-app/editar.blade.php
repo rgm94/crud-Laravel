@@ -59,7 +59,7 @@
                 @csrf
                 @method('PUT')
                 <div class="w-full flex justify-center items-center p-2 rounded-lg">
-                     <svg class="w-8 h-8 text-[#322e81]" aria-hidden="true" 
+                     <svg class="w-8 h-8 text-[#322e81] dark:text-[#322e81]" aria-hidden="true" 
                             xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
                             <path fill-rule="evenodd" d="M5 8a4 4 0 1 1 7.796 1.263l-2.533 2.534A4 4 0 0 1 5 8Zm4.06 5H7a4 4 
                             0 0 0-4 4v1a2 2 0 0 0 2 2h2.172a2.999 2.999 0 0 1-.114-1.588l.674-3.372a3 3 0 0 1 .82-1.533L9.06 

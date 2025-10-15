@@ -61,7 +61,7 @@
                     <a class="bg-[#322e81] p-2 rounded-md text-center flex justify-center items-center" 
                         href="{{route('edit',encrypt($user->id))}}"
                         >
-                        <svg class="w-6 h-6 text-white" aria-hidden="true" 
+                        <svg class="w-6 h-6 text-white dark:text-white" aria-hidden="true" 
                             xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
                             <path fill-rule="evenodd" d="M5 8a4 4 0 1 1 7.796 1.263l-2.533 2.534A4 4 0 0 1 5 8Zm4.06 5H7a4 4 
                             0 0 0-4 4v1a2 2 0 0 0 2 2h2.172a2.999 2.999 0 0 1-.114-1.588l.674-3.372a3 3 0 0 1 .82-1.533L9.06 
@@ -77,7 +77,7 @@
                         @csrf
                         @method('DELETE')
                         <button type="submit">
-                            <svg class="w-6 h-6 text-white" aria-hidden="true" 
+                            <svg class="w-6 h-6 text-white dark:text-white" aria-hidden="true" 
                             xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
                                 <path fill-rule="evenodd" d="M8.586 2.586A2 2 0 0 1 10 2h4a2 2 0 0 1 2 2v2h3a1 1 0 1 1 0 
                                 2v12a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V8a1 1 0 0 1 0-2h3V4a2 2 0 0 1 .586-1.414ZM10 
