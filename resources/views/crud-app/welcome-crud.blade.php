@@ -8,14 +8,6 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=delete" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        h1 {
-            /* Asegura que los h1 se vean más grandes y claros */
-            font-size: 1.875rem; /* text-3xl */
-            font-weight: 700; /* font-bold */
-            line-height: 2.25rem;
-        }
-    </style>
 </head>
 
 <body class="bg-gray-50 text-gray-800 font-sans">
@@ -26,7 +18,8 @@
                 ¡Bienvenido/a a la Administración Básica de Usuarios! 🚀
             </h1>
             <a href="{{ route('index') ?? '#' }}" 
-                class="mt-4 px-6 py-2 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 transition duration-300">
+                class="mt-4 px-6 py-2 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 
+                transition duration-300">
                 Ir a la Gestión de Usuarios
             </a>
         </header>
@@ -52,15 +45,18 @@
                 </p>
                 
                 <div class="w-full flex flex-wrap justify-center gap-4 mt-3">
-                    <div class="w-full sm:w-1/4 flex flex-col gap-2 justify-center items-center p-4 border border-indigo-200 bg-indigo-50 rounded-lg shadow-sm">
+                    <div class="w-full sm:w-1/4 flex flex-col gap-2 justify-center items-center p-4 border border-indigo-200
+                     bg-indigo-50 rounded-lg shadow-sm">
                         <span class="material-symbols-outlined text-4xl text-indigo-600">add_circle</span>
                         <span class="font-semibold text-sm">Create (Crear)</span>
                     </div>
-                    <div class="w-full sm:w-1/4 flex flex-col gap-2 justify-center items-center p-4 border border-green-200 bg-green-50 rounded-lg shadow-sm">
+                    <div class="w-full sm:w-1/4 flex flex-col gap-2 justify-center items-center p-4 border border-green-200
+                     bg-green-50 rounded-lg shadow-sm">
                         <span class="material-symbols-outlined text-4xl text-green-600">update</span>
                         <span class="font-semibold text-sm">Update (Actualizar)</span>
                     </div>
-                    <div class="w-full sm:w-1/4 flex flex-col gap-2 justify-center items-center p-4 border border-red-200 bg-red-50 rounded-lg shadow-sm">
+                    <div class="w-full sm:w-1/4 flex flex-col gap-2 justify-center items-center p-4 border border-red-200
+                     bg-red-50 rounded-lg shadow-sm">
                         <span class="material-symbols-outlined text-4xl text-red-600">delete</span>
                         <span class="font-semibold text-sm">Delete (Eliminar)</span>
                     </div>
@@ -75,7 +71,9 @@
                 <h2 class="text-2xl font-bold text-center text-indigo-600">
                     Lo que Puedes Practicar Aquí 🛠️
                 </h2>
-                <span class="text-center text-gray-700">Esta es una herramienta ideal para entender cómo Laravel maneja los siguientes aspectos:</span>
+                <span class="text-center text-gray-700">Esta es una herramienta ideal para entender cómo Laravel maneja los
+                     siguientes aspectos:
+                </span>
 
                 <div class="relative overflow-x-auto w-full border border-gray-200 rounded-lg shadow-md">
                     <table class="w-full text-sm text-left text-gray-600">
