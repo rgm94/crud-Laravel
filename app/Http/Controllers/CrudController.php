@@ -31,7 +31,7 @@ class CrudController extends Controller
             ],
 
             [
-                'name.required' => 'El nombre tiene que tener al menos 3 caracteres',
+                'name.min' => 'El nombre tiene que tener al menos 3 caracteres',
                 'name.required' => 'El campo nombre debe estar relleno.',
                 'email.required' => 'El campo email debe estar relleno.',
                 'email.unique' => 'Este email ya está registrado.',
@@ -68,7 +68,7 @@ class CrudController extends Controller
             ],
 
             [
-                'name.required' => 'El nombre tiene que tener al menos 3 caracteres',
+                'name.min' => 'El nombre tiene que tener al menos 3 caracteres',
                 'name.required' => 'El campo nombre debe estar relleno.',
                 'email.required' => 'El campo email debe estar relleno.',
                 'password.min' => 'La contraseña debe tener al menos 8 caracteres',
