@@ -42,7 +42,7 @@
         @endif
 
         @if (count($users) < 1)
-            <div class="w-full max-w-lg mt-12 p-6 bg-white shadow-xl rounded-xl text-center">
+            <div class="w-full lg:w-1/2 mt-12 p-6 bg-white shadow-xl rounded-xl text-center">
                 <p class="text-xl font-semibold text-gray-700 mb-4">¡Vaya! Parece que no hay usuarios registrados.</p>
                 <div class="p-2">
                     <img class="rounded-md mx-auto" src="{{ asset('images/no-users-banner.png') }}" alt="No hay usuarios registrados">
