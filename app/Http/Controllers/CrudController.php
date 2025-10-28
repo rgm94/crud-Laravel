@@ -63,7 +63,7 @@ class CrudController extends Controller
         $request->validate(
             [
                 'name' => 'required|string|min:3',
-                'email' => 'required|unique:users|string',
+                'email' => 'required|string',
                 'password' => 'required|min:8'
             ],
 
@@ -71,7 +71,6 @@ class CrudController extends Controller
                 'name.required' => 'El nombre tiene que tener al menos 3 caracteres',
                 'name.required' => 'El campo nombre debe estar relleno.',
                 'email.required' => 'El campo email debe estar relleno.',
-                'email.unique' => 'Este email ya está registrado.',
                 'password.min' => 'La contraseña debe tener al menos 8 caracteres',
             ]
         );
